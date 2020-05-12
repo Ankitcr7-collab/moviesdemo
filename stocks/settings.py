@@ -30,7 +30,7 @@ SECRET_KEY = 'c2o#e#bmkta&%7n$)dvro3u!i+@bxskzqug6_d3jc190hn38sv'
 # DEBUG = config('DEBUG')
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['stock-bidding-webapp.herokuapp.com']
 
 
 # Application definition
