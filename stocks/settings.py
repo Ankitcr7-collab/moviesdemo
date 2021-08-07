@@ -30,8 +30,9 @@ SECRET_KEY = 'c2o#e#bmkta&%7n$)dvro3u!i+@bxskzqug6_d3jc190hn38sv'
 # DEBUG = config('DEBUG')
 DEBUG = True
 
-ALLOWED_HOSTS = ['stock-bidding-webapp.herokuapp.com']
+ALLOWED_HOSTS = ['stock-bidding-webapp.herokuapp.com'] #allowed host for heroku
 
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -79,20 +80,21 @@ WSGI_APPLICATION = 'stocks.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-default_dburl = 'sqlite://' + os.path.join(BASE_DIR, 'db.sqlite3')
-
-DATABASES = {
-    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
-}
-
-
-
+#database settings for production
+# default_dburl = 'sqlite://' + os.path.join(BASE_DIR, 'db.sqlite3')
+#
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
+#     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 # }
+
+
+# database settings for local testing.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
